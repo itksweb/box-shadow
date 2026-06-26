@@ -31,7 +31,7 @@ Users should be able to:
 
 ![Project Demo](./screenshot.gif)
 
-
+<img src="screenshot.gif" alt="Project Demo" width="600" />
 
 ## Links
 
