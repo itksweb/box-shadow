@@ -29,9 +29,7 @@ Users should be able to:
 
 ## Screenshot
 
-![Project Demo](./screenshot.gif)
-
-<img src="screenshot.gif" alt="Project Demo" width="600" />
+<img src="screenshot.gif" alt="Project Demo" style = "max-width=500px;" />
 
 ## Links
 
