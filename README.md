@@ -29,7 +29,7 @@ Users should be able to:
 
 ## Screenshot
 
-<img src="screenshot.gif" alt="Project Demo" style = "max-width=500px;" />
+<img src="screenshot.gif" alt="Project Demo" width="400" />
 
 ## Links
 
