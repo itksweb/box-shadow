@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Shadow Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="shape">
+        <p>circlular</p>
+        <span class="shape-toggle toggle">
+          <span class="shape-toggle-inner toggle-inner"></span>
+        </span>
+        <button
+          type="button"
+          class="add-box-shadow"
+          title="add another layer of box shadow"
+        >
+          +
+        </button>
+      </div>
+      <div id="input-controls">
+        <div class="box-shadow-input">
+          <label for="xOffset" class=""> Horizontal shadow </label>
+          <input
+            class="progress-slider input-control"
+            type="range"
+            name="xOffset"
+            id="xOffset"
+            min="-50"
+            max="50"
+          />
+        </div>
+        <div class="box-shadow-input">
+          <label for="yOffset" class=""> Vertical shadow </label>
+          <input
+            class="progress-slider input-control"
+            type="range"
+            name="yOffset"
+            id="yOffset"
+            min="-50"
+            max="50"
+          />
+        </div>
+        <div class="box-shadow-input">
+          <label for="blur">Blur</label>
+          <input
+            class="progress-slider input-control"
+            type="range"
+            name="blur"
+            id="blur"
+            min="0"
+            max="50"
+          />
+        </div>
+        <div class="box-shadow-input">
+          <label for="spread">Spread</label>
+          <input
+            class="progress-slider input-control"
+            type="range"
+            name="spread"
+            id="spread"
+            min="0"
+            max="20"
+          />
+        </div>
+        <div class="box-shadow-input">
+          <label for="shadowColor">Shadow color</label>
+          <input
+            class="input-control"
+            type="color"
+            name="shadowColor"
+            id="shadowColor"
+          />
+        </div>
+        <div class="box-shadow-input" id="inset">
+          <span class="label toggle-on">outset</span>
+          <span class="inset-toggle toggle">
+            <span class="inset-toggle-inner toggle-inner"></span>
+          </span>
+          <span class="label">inset</span>
+        </div>
+      </div>
+      <div id="multi-box-shadow">
+        <button
+          type="button"
+          class="shadow-thumbnail shadow-btn active"
+          data-index="0"
+        >
+          <span
+            type="button"
+            class="thumbnail-label"
+            title="adjust this layer of box shadow"
+            >shad 1</span
+          >
+          <span
+            type="button"
+            class="del-shadow"
+            title="delete this layer of box shadow"
+            >x</span
+          >
+        </button>
+      </div>
+      <div id="code">
+        <div class="toggle-shadows" id="toggle-shadows">
+          <button
+            type="button"
+            class="shadow-toggle shadow-btn active"
+            data-index="0"
+            title="show or hide this layer of box shadow"
+          >
+            shad 1
+          </button>
+        </div>
+        <textarea
+          class="output"
+          name="code-holder"
+          id="code-holder"
+          readonly
+        ></textarea>
+
+        <button type="button" class="copy-btn">copy</button>
+      </div>
+      <template id="new-thumbnail">
+        <button
+          type="button"
+          class="shadow-btn shadow-thumbnail active"
+          data-index=""
+        >
+          <span
+            type="button"
+            class="thumbnail-label"
+            title="adjust this layer of box shadow"
+          ></span>
+          <span
+            type="button"
+            class="del-shadow"
+            title="delete this layer of box shadow"
+            >x</span
+          >
+        </button>
+      </template>
+      <template id="new-shadow-toggle">
+        <button
+          type="button"
+          class="shadow-toggle shadow-btn active"
+          data-index=""
+          title="show or hide this layer of box shadow"
+        >
+          shad 1
+        </button>
+      </template>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

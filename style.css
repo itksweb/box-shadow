@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  --shape-size: 100px;
+  --theme-color: #f0ec04;
+  --color-1: #8c0d0d;
+  --color-2: #fcf2f2;
+  --color-3: #f8f6f3;
+  --color-4: #f8d5d5;
+  --color-5: #fbbaba;
+  --border-color: #d5d6d6;
+}
+
+/* ============================================
+        START STYLING THE RANGE INPUT TYPE
+==============================================*/
+
+/*---------------------------------------- 
+                BASE RESET 
+-----------------------------------------*/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+
+/*---------------------------------------- 
+        CHROME, SAFARI, EDGE, OPERA 
+-----------------------------------------*/
+
+/* ----------- track ---------- */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  transition: background 0.15s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-runnable-track {
+  background: #94a3b8;
+}
+
+/* ----------- thumb ---------- */
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--color-1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* ------------------------------------------
+                    FIREFOX
+---------------------------------------------*/
+
+/* ----------- track ---------- */
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  transition: background 0.15s ease;
+}
+
+input[type="range"]:hover::-moz-range-track {
+  background: #94a3b8;
+}
+
+/* ----------- thumb ---------- */
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--color-1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+input[type="range"].progress-slider {
+  --value: 50%;
+  border-radius: 4px;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--color-4) 0%,
+    var(--color-5) var(--value),
+    #e2e8f0 var(--value),
+    #e2e8f0 100%
+  );
+}
+
+input[type="range"].progress-slider::-webkit-slider-runnable-track {
+  background: transparent;
+}
+
+/* ============================================
+        END STYLING THE RANGE INPUT TYPE
+==============================================*/
+
+button {
+  border: none;
+  background-color: transparent;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-2);
+}
+main {
+  min-height: 90vh;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 5px 0px #dad8d5;
+  background-color: white;
+}
+
+.toggle {
+  height: 12px;
+  width: 25px;
+  border-radius: 6px;
+  background-color: #dad8d5;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  cursor: pointer;
+}
+
+.toggle-inner {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.toggle.toggle-on {
+  justify-content: flex-end;
+  background-color: var(--color-1);
+}
+
+#shape {
+  width: var(--shape-size);
+  height: var(--shape-size);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column-reverse;
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  .add-box-shadow {
+    color: var(--color-1);
+    font-size: 1.2rem;
+    padding-top: 0;
+  }
+}
+
+#shape.circular {
+  border-radius: 50%;
+}
+
+#input-controls {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+
+  .box-shadow-input:not(#inset) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .box-shadow-input label {
+    text-align: right;
+  }
+
+  #inset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 7px;
+    background-color: var(--color-2);
+    padding: 4px;
+    border-radius: 0.25rem;
+
+    .label.toggle-on {
+      font-weight: 500;
+    }
+  }
+
+  input[type="color"] {
+    inline-size: 100%;
+    block-size: 25px;
+  }
+}
+
+.add-box-shadow,
+.shadow-btn span,
+.del-shadow {
+  cursor: pointer;
+}
+
+.shadow-btn {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0.2rem;
+  border-radius: 0.1rem;
+  background-color: var(--color-4);
+  transition: background-color 100ms ease-in;
+}
+
+.shadow-btn:hover,
+.shadow-btn.active {
+  background-color: var(--color-5);
+}
+
+#multi-box-shadow {
+  margin-top: -0.5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0.2rem;
+
+  .shadow-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .shadow-thumbnail:hover .del-shadow,
+  .del-shadow:hover {
+    background-color: white;
+  }
+
+  .del-shadow:hover {
+    font-size: 0.7rem;
+  }
+
+  .del-shadow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 0.7rem;
+    width: 0.7rem;
+    padding: 0 2px 2px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    background-color: var(--color-2);
+  }
+}
+
+#code {
+  width: 100%;
+
+  .toggle-shadows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0;
+
+    .shadow-toggle {
+      padding: 0.1rem 0.5rem 0.2rem;
+      cursor: pointer;
+    }
+  }
+
+  .output {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+  .copy-btn {
+    width: 100%;
+    background-color: var(--color-1);
+    margin-top: 0.5rem;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .copy-btn.copied {
+    background-color: green;
+  }
+}
+
+:disabled {
+  cursor: not-allowed !important;
+}
